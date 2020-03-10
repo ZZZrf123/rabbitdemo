@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zrf.rabbitmq.mapper.OrdersMapper">
+
+
+    <select id="findAll" resultType="Orders">
+		select id,name,message_id from orders;
+	</select>
+
+	<insert id="insert" parameterType="com.zrf.rabbitmq.eneity.Orders" >
+    insert into orders (id, name, message_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR}
+      )
+  </insert>
+</mapper>
+ 
+
